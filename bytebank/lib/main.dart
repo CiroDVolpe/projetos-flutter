@@ -15,12 +15,61 @@ class BytebankApp extends StatelessWidget{
 }
 
 class TransferenceForm extends StatelessWidget{
+
+  final TextEditingController _controller_account = TextEditingController();
+  final TextEditingController _controller_value = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('New Transference'),
       ),
-      body: Text('teste'),
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+            child: TextField(
+              controller: _controller_account,
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              decoration: InputDecoration(
+                labelText: 'Account Number',
+                hintText: '0000',
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0),
+            child: TextField(
+              controller: _controller_value,
+              style: TextStyle(
+                fontSize: 24.0,
+              ),
+              decoration: InputDecoration(
+                icon: Icon(Icons.monetization_on),
+                labelText: 'Value',
+                hintText: '0.00',
+              ),
+              keyboardType: TextInputType.number,
+            ),
+          ),
+          RaisedButton(
+            child: Text('Confirm'),
+            onPressed: () {
+              final accountNumber = int.tryParse(_controller_account.text);
+              final value = double.tryParse(_controller_value.text);
+              if (accountNumber != null && value != null) {
+                final transferenceCreated = Transference(value, accountNumber);
+                debugPrint(transferenceCreated.toString());
+              } else {
+                print(Text('ERROR: INVALID ENTRANCE'));
+              }
+            },
+          ),
+      ],
+      )
     );
   }
 }
@@ -72,5 +121,10 @@ class Transference {
   final int accountNumber;
 
   Transference(this.value, this.accountNumber);
+
+  @override
+  String toString() {
+    return 'Transference{value: $value, account: $accountNumber}';
+  }
 }
 
