@@ -7,14 +7,29 @@ class BytebankApp extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: Scaffold(
-        body: TransferenceForm(),
+      theme: ThemeData(
+        primaryColor: Colors.green[900],
+        accentColor: Colors.blueAccent[700],
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.blueAccent[700],
+          textTheme: ButtonTextTheme.primary,
+        ),
       ),
+      home: TransferenceList(),
     );
   }
 }
 
-class TransferenceForm extends StatelessWidget{
+class TransferenceForm extends StatefulWidget{
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return TransferenceFormState();
+  }
+}
+
+class TransferenceFormState extends State<TransferenceForm>{
 
   final TextEditingController _controller_account = TextEditingController();
   final TextEditingController _controller_value = TextEditingController();
@@ -22,60 +37,82 @@ class TransferenceForm extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('New Transference'),
-      ),
-      body: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
-            child: TextField(
-              controller: _controller_account,
-              style: TextStyle(
-                fontSize: 24.0,
+        appBar: AppBar(title: Text('New Transference'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Editor(
+                controller: _controller_account,
+                label: 'Account Number',
+                hint: '0000',
               ),
-              decoration: InputDecoration(
-                labelText: 'Account Number',
-                hintText: '0000',
+              Editor(
+                controller: _controller_value,
+                label: 'Value',
+                hint: '0.00',
+                icon: Icons.monetization_on,
               ),
-              keyboardType: TextInputType.number,
-            ),
+              RaisedButton(
+                child: Text('Confirm'),
+                onPressed: () => _createTransference(context),
+              ),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 8.0),
-            child: TextField(
-              controller: _controller_value,
-              style: TextStyle(
-                fontSize: 24.0,
-              ),
-              decoration: InputDecoration(
-                icon: Icon(Icons.monetization_on),
-                labelText: 'Value',
-                hintText: '0.00',
-              ),
-              keyboardType: TextInputType.number,
-            ),
-          ),
-          RaisedButton(
-            child: Text('Confirm'),
-            onPressed: () {
-              final accountNumber = int.tryParse(_controller_account.text);
-              final value = double.tryParse(_controller_value.text);
-              if (accountNumber != null && value != null) {
-                final transferenceCreated = Transference(value, accountNumber);
-                debugPrint(transferenceCreated.toString());
-              } else {
-                print(Text('ERROR: INVALID ENTRANCE'));
-              }
-            },
-          ),
-      ],
-      )
+        )
     );
+  }
+
+  void _createTransference(BuildContext context){
+    final int accountNumber = int.tryParse(_controller_account.text);
+    final double value = double.tryParse(_controller_value.text);
+    if (accountNumber != null && value != null) {
+      final transferenceCreated = Transference(value, accountNumber);
+      Navigator.pop(context, transferenceCreated);
+    }
   }
 }
 
-class TransferenceList extends StatelessWidget {
+class Editor extends StatelessWidget {
 
+  final TextEditingController controller;
+  final String label;
+  final String hint;
+  final IconData icon;
+
+  Editor({this.controller, this.label, this.hint, this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: TextField(
+        controller: controller,
+        style: TextStyle(
+          fontSize: 24.0,
+        ),
+        decoration: InputDecoration(
+          icon: icon != null ? Icon(icon) : null,
+          labelText: label,
+          hintText: hint,
+        ),
+        keyboardType: TextInputType.number,
+      ),
+    );
+  }
+
+}
+
+class TransferenceList extends StatefulWidget {
+  final List<Transference> _transferences = List();
+
+  @override
+  State<StatefulWidget> createState(){
+    return TransferenceListState();
+  }
+}
+
+class TransferenceListState extends State<TransferenceList> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -83,19 +120,36 @@ class TransferenceList extends StatelessWidget {
       appBar: AppBar(
         title: Text('Transferences'),
       ),
-      body: Column(
-        children: <Widget>[
-          TransferenceItem(Transference(100.0, 1001)),
-          TransferenceItem(Transference(200.0, 1010)),
-          TransferenceItem(Transference(300.0, 1100)),
-        ],
+      body: ListView.builder(
+        itemCount: widget._transferences.length,
+        itemBuilder: (context, index){
+          final transference = widget._transferences[index];
+          return TransferenceItem(transference);
+        },
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
+        onPressed: () {
+          final Future<Transference> future = Navigator.push(context, MaterialPageRoute(builder: (context){
+            return TransferenceForm();
+          }));
+          future.then((recivedTransference){
+            Future.delayed(Duration(seconds: 1), (){
+              debugPrint('Chegou transferencia');
+              if(recivedTransference != null) {
+                setState(() {
+                  widget._transferences.add(recivedTransference);
+                });
+               }
+            });
+          });
+        },
       ),
     );
-  }
 }
+}
+
+
 
 class TransferenceItem extends StatelessWidget {
 
@@ -115,6 +169,7 @@ class TransferenceItem extends StatelessWidget {
     );
   }
 }
+
 
 class Transference {
   final double value;
