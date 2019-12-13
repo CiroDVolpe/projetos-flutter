@@ -1,3 +1,4 @@
+import 'package:cozinhando_casa/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -20,32 +21,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      home: Scaffold(
-        body: SizedBox(
-          height: 300,
-          child: Card(
-            margin: EdgeInsets.all(16),
-            child: Column(
-              children: <Widget>[
-                Stack(
-                  children: <Widget>[
-                    Image.network('https://www.oetker.com.br/Recipe/Recipes/oetker.com.br/br-pt/baking/image-thumb__67767__RecipeDetail/bolo-trufado-de-chocolate-com-avela.jpg', fit: BoxFit.fill, height: 268,),
-                    Positioned(
-                      bottom: 10,
-                      left: 10,
-                      child: Text('Bolo de Chocolate', style: TextStyle(fontSize: 20),),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-
-        appBar: AppBar(
-          title: Text('Cozinha'),
-        ),
-      ),
+      home: Home(),
     );
   }
 }
