@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import '../../models/receita.dart';
 
-class Home extends StatelessWidget{
+class Home extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return new HomeState();
+  }
+}
+
+class HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     return _homeBuilder();
@@ -8,14 +18,30 @@ class Home extends StatelessWidget{
 
   Widget _homeBuilder(){
     return Scaffold(
-      body: _cardBuilder(),
+      body: _cardListBuilder(),
       appBar: _appBarBuilder(),
     );
-
-
   }
 
-  Widget _cardBuilder(){
+  Widget _cardListBuilder(){
+    return FutureBuilder(
+      future: DefaultAssetBundle
+          .of(context)
+          .loadString('assets/receitas.json'),
+      builder: (context, snapshot){
+        List<dynamic> receitas  = json.decode(snapshot.data.toString());
+        return ListView.builder(
+          itemBuilder: (BuildContext context, int index){
+            Receita receita = Receita.fromJson(receitas[index]);
+            return _cardBuilder(receita.titulo, receita.foto);
+          },
+          itemCount: receitas == null ? 0 : receitas.length,
+        );
+      },
+    );
+  }
+
+  Widget _cardBuilder(titulo, foto){
     return SizedBox(
       height: 300,
       child: Card(
@@ -24,8 +50,9 @@ class Home extends StatelessWidget{
           children: <Widget>[
             Stack(
               children: <Widget>[
-                _cardImageBuilder(),
-                _cardTextBuilder(),
+                _cardImageBuilder(foto),
+                _cardGradientBuilder(),
+                _cardTextBuilder(titulo),
               ],
             ),
           ],
@@ -34,16 +61,32 @@ class Home extends StatelessWidget{
     );
   }
 
-  Widget _cardTextBuilder(){
+  Widget _cardGradientBuilder(){
+    return Container(
+      height: 268,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: FractionalOffset.topCenter,
+          end: FractionalOffset.bottomCenter,
+          colors: [
+            Colors.transparent,
+            Colors.deepOrange.withOpacity(0.7),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _cardTextBuilder(titulo){
     return Positioned(
       bottom: 10,
       left: 10,
-      child: Text('Bolo de Chocolate', style: TextStyle(fontSize: 20),),
+      child: Text(titulo, style: TextStyle(fontSize: 20, color: Colors.white),),
     );
   }
-  Widget _cardImageBuilder(){
-    return Image.network(
-      'https://www.oetker.com.br/Recipe/Recipes/oetker.com.br/br-pt/baking/image-thumb__67767__RecipeDetail/bolo-trufado-de-chocolate-com-avela.jpg',
+  Widget _cardImageBuilder(foto){
+    return Image.asset(
+      foto,
       fit: BoxFit.fill,
       height: 268,
     );
