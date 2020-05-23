@@ -1,0 +1,4 @@
+#Fri May 22 00:43:17 BRT 2020
+base.0=/Users/ciro/Desktop/projetos-flutter/unity_converter/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

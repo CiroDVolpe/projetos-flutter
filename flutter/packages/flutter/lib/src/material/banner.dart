@@ -1,4 +1,4 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
@@ -17,7 +17,7 @@ import 'theme.dart';
 /// to be dismissed.
 ///
 /// Banners should be displayed at the top of the screen, below a top app bar.
-/// They are persistent and nonmodal, allowing the user to either ignore them or
+/// They are persistent and non-modal, allowing the user to either ignore them or
 /// interact with them at any time.
 ///
 /// The [actions] will be placed beside the [content] if there is only one.
@@ -57,7 +57,7 @@ class MaterialBanner extends StatelessWidget {
   /// Style for the text in the [content] of the [MaterialBanner].
   ///
   /// If `null`, [MaterialBannerThemeData.contentTextStyle] is used. If that is
-  /// also `null`, [ThemeData.textTheme.body1] is used.
+  /// also `null`, [ThemeData.textTheme.bodyText2] is used.
   final TextStyle contentTextStyle;
 
   /// The set of actions that are displayed at the bottom or trailing side of
@@ -118,11 +118,9 @@ class MaterialBanner extends StatelessWidget {
         ?? bannerTheme.padding
         ?? const EdgeInsetsDirectional.only(end: 16.0);
 
-    final Widget buttonBar = ButtonTheme.bar(
+    final Widget buttonBar = ButtonBar(
       layoutBehavior: ButtonBarLayoutBehavior.constrained,
-      child: ButtonBar(
-        children: actions,
-      ),
+      children: actions,
     );
 
     final Color backgroundColor = this.backgroundColor
@@ -130,7 +128,7 @@ class MaterialBanner extends StatelessWidget {
         ?? theme.colorScheme.surface;
     final TextStyle textStyle = contentTextStyle
         ?? bannerTheme.contentTextStyle
-        ?? theme.textTheme.body1;
+        ?? theme.textTheme.bodyText2;
 
     return Container(
       color: backgroundColor,
@@ -145,7 +143,7 @@ class MaterialBanner extends StatelessWidget {
                     padding: leadingPadding,
                     child: leading,
                   ),
-                Flexible(
+                Expanded(
                   child: DefaultTextStyle(
                     style: textStyle,
                     child: content,

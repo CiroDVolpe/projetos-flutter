@@ -1,0 +1,123 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/d1bbc309b5ab37136a236f40605b5b78/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/ffe07f9cdc57e6134f90c54f1e59aba9/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1aff9c39b43c6bf3bcec143d7d7f99f9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4d7a3cf3966bfd7fecd0dfb7ec174d6f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/ace3960d3e38edfe18af79a0c6fb902b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/a659b0033eee3c305a9a24fb4dd1e628/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/4159e2a8f73cbe75d991f35101a2c369/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/655f467c8cfa4e1766b3b1830cf4cf49/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f70c38ebd72544cf3ba8b07b1b395094/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/f86a6a4b5faaf51d46a146b21d78a71f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/a331a380186800fe74e4c9ae0969a7ac/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/4e0c292b1d4b8b1de5f34ec38c8c3177/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+	package
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:2:5-49
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:1-33:12
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:1:11-69
+application
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:9:5-32:19
+MERGED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/a331a380186800fe74e4c9ae0969a7ac/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/a331a380186800fe74e4c9ae0969a7ac/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:11:9-47
+	android:icon
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:12:9-43
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:10:9-57
+activity#com.example.task02_category_widget.MainActivity
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:13:9-31:20
+	android:launchMode
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:15:13-43
+	android:hardwareAccelerated
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:18:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:19:13-55
+	android:configChanges
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:17:13-144
+	android:theme
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:16:13-47
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:14:13-41
+meta-data#io.flutter.app.android.SplashScreenUntilFirstFrame
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:24:13-26:40
+	android:value
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:26:17-37
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:25:17-82
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:29:17-76
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml:29:27-74
+uses-sdk
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/d1bbc309b5ab37136a236f40605b5b78/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0.aar/d1bbc309b5ab37136a236f40605b5b78/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/ffe07f9cdc57e6134f90c54f1e59aba9/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/activity-1.0.0.aar/ffe07f9cdc57e6134f90c54f1e59aba9/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1aff9c39b43c6bf3bcec143d7d7f99f9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/1aff9c39b43c6bf3bcec143d7d7f99f9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4d7a3cf3966bfd7fecd0dfb7ec174d6f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/4d7a3cf3966bfd7fecd0dfb7ec174d6f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/ace3960d3e38edfe18af79a0c6fb902b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/ace3960d3e38edfe18af79a0c6fb902b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-1.1.0.aar/00a7fabd3c999d671f5b59b4016c97f1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/a659b0033eee3c305a9a24fb4dd1e628/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.2.0.aar/a659b0033eee3c305a9a24fb4dd1e628/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/4159e2a8f73cbe75d991f35101a2c369/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0.aar/4159e2a8f73cbe75d991f35101a2c369/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/655f467c8cfa4e1766b3b1830cf4cf49/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/655f467c8cfa4e1766b3b1830cf4cf49/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f70c38ebd72544cf3ba8b07b1b395094/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/f70c38ebd72544cf3ba8b07b1b395094/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/f86a6a4b5faaf51d46a146b21d78a71f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/f86a6a4b5faaf51d46a146b21d78a71f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/a331a380186800fe74e4c9ae0969a7ac/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0.aar/a331a380186800fe74e4c9ae0969a7ac/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/4e0c292b1d4b8b1de5f34ec38c8c3177/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/ciro/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0.aar/4e0c292b1d4b8b1de5f34ec38c8c3177/AndroidManifest.xml:20:5-44
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml:6:5-66
+	android:name
+		ADDED from /Users/ciro/Desktop/projetos-flutter/unity_converter/android/app/src/debug/AndroidManifest.xml:6:22-64

@@ -1,8 +1,9 @@
-// Copyright 2018 The Chromium Authors. All rights reserved.
+// Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../rendering/mock_canvas.dart';
@@ -85,19 +86,66 @@ void main() {
       );
     }
 
-    await tester.pumpWidget(buildFrame(TargetPlatform.iOS));
-    expect(find.byType(CupertinoSwitch), findsOneWidget);
-    expect(value, isFalse);
+    for (final TargetPlatform platform in <TargetPlatform>[ TargetPlatform.iOS, TargetPlatform.macOS ]) {
+      value = false;
+      await tester.pumpWidget(buildFrame(platform));
+      expect(find.byType(CupertinoSwitch), findsOneWidget);
+      expect(value, isFalse, reason: 'on ${describeEnum(platform)}');
 
-    await tester.tap(find.byType(SwitchListTile));
-    expect(value, isTrue);
+      await tester.tap(find.byType(SwitchListTile));
+      expect(value, isTrue, reason: 'on ${describeEnum(platform)}');
+    }
 
-    await tester.pumpWidget(buildFrame(TargetPlatform.android));
-    await tester.pumpAndSettle(); // Finish the theme change animation.
+    for (final TargetPlatform platform in <TargetPlatform>[ TargetPlatform.android, TargetPlatform.fuchsia, TargetPlatform.linux, TargetPlatform.windows ]) {
+      value = false;
+      await tester.pumpWidget(buildFrame(platform));
+      await tester.pumpAndSettle(); // Finish the theme change animation.
 
-    expect(find.byType(CupertinoSwitch), findsNothing);
-    expect(value, isTrue);
-    await tester.tap(find.byType(SwitchListTile));
-    expect(value, isFalse);
+      expect(find.byType(CupertinoSwitch), findsNothing);
+      expect(value, isFalse, reason: 'on ${describeEnum(platform)}');
+      await tester.tap(find.byType(SwitchListTile));
+      expect(value, isTrue, reason: 'on ${describeEnum(platform)}');
+    }
+  });
+
+  testWidgets('SwitchListTile contentPadding', (WidgetTester tester) async {
+    Widget buildFrame(TextDirection textDirection) {
+      return MediaQuery(
+        data: const MediaQueryData(
+          padding: EdgeInsets.zero,
+          textScaleFactor: 1.0,
+        ),
+        child: Directionality(
+          textDirection: textDirection,
+          child: Material(
+            child: Container(
+              alignment: Alignment.topLeft,
+              child: SwitchListTile(
+                contentPadding: const EdgeInsetsDirectional.only(
+                  start: 10.0,
+                  end: 20.0,
+                  top: 30.0,
+                  bottom: 40.0,
+                ),
+                secondary: const Text('L'),
+                title: const Text('title'),
+                value: true,
+                onChanged: (bool selected) {},
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
+    await tester.pumpWidget(buildFrame(TextDirection.ltr));
+
+    expect(tester.getTopLeft(find.text('L')).dx, 10.0); // contentPadding.start = 10
+    expect(tester.getTopRight(find.byType(Switch)).dx, 780.0); // 800 - contentPadding.end
+
+    await tester.pumpWidget(buildFrame(TextDirection.rtl));
+
+    expect(tester.getTopLeft(find.byType(Switch)).dx, 20.0); // contentPadding.end = 20
+    expect(tester.getTopRight(find.text('L')).dx, 790.0); // 800 - contentPadding.start
   });
 }
