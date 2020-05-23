@@ -1,26 +1,52 @@
+import 'package:bytebank2/database/app_database.dart';
 import 'package:bytebank2/models/contact.dart';
 import 'package:bytebank2/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 
 class ContactsList extends StatelessWidget {
-
-  final List<Contact> contacts = List();
-
   @override
   Widget build(BuildContext context) {
-    contacts.add(Contact(0, 'Ciro Della Volpe', 6913));
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Contacts',
         ),
       ),
-      body: ListView.builder(
-        itemBuilder: (context, index){
-          final Contact contact = contacts[index];
-          return _ContactItem(contact);
+      body: FutureBuilder<List<Contact>>(
+        initialData: List(),
+        future: findAll(),
+        builder: (context, snapshot) {
+          switch (snapshot.connectionState) {
+            case ConnectionState.none:
+              break;
+            case ConnectionState.waiting:
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    CircularProgressIndicator(),
+                    Text('Loading'),
+                  ],
+                ),
+              );
+              break;
+            case ConnectionState.active:
+              break;
+            case ConnectionState.done:
+              final List<Contact> contacts = snapshot.data;
+              return ListView.builder(
+                itemBuilder: (context, index) {
+                  final Contact contact = contacts[index];
+                  return _ContactItem(contact);
+                },
+                itemCount: contacts.length,
+              );
+              break;
+          }
+
+          return Text('Unknown Error');
         },
-        itemCount: contacts.length,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -42,8 +68,7 @@ class ContactsList extends StatelessWidget {
   }
 }
 
-class _ContactItem extends StatelessWidget{
-
+class _ContactItem extends StatelessWidget {
   final Contact contact;
 
   _ContactItem(this.contact);
