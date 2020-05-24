@@ -3,12 +3,7 @@ import 'package:bytebank2/models/contact.dart';
 import 'package:bytebank2/screens/contact_form.dart';
 import 'package:flutter/material.dart';
 
-class ContactsList extends StatefulWidget {
-  @override
-  _ContactsListState createState() => _ContactsListState();
-}
-
-class _ContactsListState extends State<ContactsList> {
+class ContactsList extends StatelessWidget {
 
   final ContactDao _dao = ContactDao();
 
@@ -16,9 +11,7 @@ class _ContactsListState extends State<ContactsList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Contacts',
-        ),
+        title: Text('Transfer'),
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: List(),
@@ -34,7 +27,7 @@ class _ContactsListState extends State<ContactsList> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     CircularProgressIndicator(),
-                    Text('Loading'),
+                    Text('Loading')
                   ],
                 ),
               );
@@ -44,6 +37,7 @@ class _ContactsListState extends State<ContactsList> {
             case ConnectionState.done:
               final List<Contact> contacts = snapshot.data;
               return ListView.builder(
+                scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
                   final Contact contact = contacts[index];
                   return _ContactItem(contact);
@@ -52,8 +46,7 @@ class _ContactsListState extends State<ContactsList> {
               );
               break;
           }
-
-          return Text('Unknown Error');
+          return Text('Unknown error');
         },
       ),
       floatingActionButton: FloatingActionButton(
